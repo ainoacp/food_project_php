@@ -63,3 +63,6 @@ class FoodController extends AbstractController
         return $this->render('food/showRecipe.html.twig', ["recipe" => $recipe]);
     }
 }
+
+
+//http://localhost:8888/phpMyAdmin5/index.php?route=/sql&pos=0&db=food&table=food
