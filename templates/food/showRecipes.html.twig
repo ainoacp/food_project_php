@@ -1,0 +1,21 @@
+{% extends "food/base.html.twig" %}
+    {% block container %}
+        <h2>Recipies list</h2>
+        {% for message in app.flashes('éxito') %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    <div class="row row-cols-1 row-cols-md-2">
+        {% for recipe in food %}
+            <div class="col mb-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{recipe.name}}</h5>
+                        <img class="card-img-top" src="{{recipe.image}}" alt="{{recipe.id}}" /> 
+                        <p class="card-text">{{recipe.type}}</p>
+                        <a href="{{path("get_recipe", {"id": recipe.id})}}" >Show recipe</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
